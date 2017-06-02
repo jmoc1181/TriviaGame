@@ -1,0 +1,49 @@
+
+
+.container{ 
+	max-width: 920px;
+ }
+
+
+.header { 
+	text-align: center;
+	font-family: 'Arapey', serif;
+	margin-bottom: 50px;
+ }
+
+
+.start-button { 
+	text-align: center;
+	height: 75px; 
+	width: 200px; 
+	font-family: 'Arapey', serif;
+	background-color: #fcd720;
+	color: red;
+	font-size: 40px;
+	margin-bottom: 20px;	
+	margin-top: 50px;
+  }
+
+.start { 
+	text-align: center;
+
+ }
+.row { 
+	align-content: center;
+ }
+
+
+
+ .question-box { 
+ 	border-color: red;
+ 	border-style: solid;
+	border-width: 1px 1px 1px 1px;
+	height: 100px; 
+	margin-bottom: 20px;
+  }
+
+
+.question { 
+	margin-bottom: 30px;
+	
+ }
