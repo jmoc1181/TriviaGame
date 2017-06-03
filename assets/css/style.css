@@ -1,8 +1,16 @@
-
-
 .container{ 
-	max-width: 920px;
+	max-width: 980px;
+
  }
+
+ body { 
+    background-color:  #d5e6ee ;
+	
+	background-attachment: fixed;
+	background-position: center; 
+	background-repeat: no-repeat;
+
+  }
 
 
 .header { 
@@ -28,22 +36,20 @@
 	text-align: center;
 
  }
+
+
 .row { 
 	align-content: center;
  }
 
 
-
- .question-box { 
- 	border-color: red;
+.question { 
+	margin-bottom: 30px;
+	border-color: red;
  	border-style: solid;
 	border-width: 1px 1px 1px 1px;
 	height: 100px; 
 	margin-bottom: 20px;
-  }
-
-
-.question { 
-	margin-bottom: 30px;
-	
+	text-align: center;
  }
+
