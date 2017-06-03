@@ -4,38 +4,55 @@ var questions = [
 	{
 		question:'What is the name of the alcoholic beverage that cannot be detected on the breath?',
 		answer:['Schnapps', 'Hennigans', 'Schneigals', 'Smirnoff'],
-		correctAnswer: 'Hennigans'
+		correctAnswer: 'Hennigans',
+		group:'sister'
 	}, 
 
 
 	{		
 		question:"What is the name of Elaine's sister?",
 		answer:['Debra', 'Madison', 'Helen', 'Gail'],
-		correctAnswer: 'Gail'
+		correctAnswer: 'Gail',
+		group:'sister'
 	},
+
 
 	{		
 		question:"In 'The Subway', what was Georges reason for not giving the blind man money?",
 		answer:['He had no change.', 'He cant carry change in those pants.', 'He gave his change to someone else', 'He ignores him.'],
-		correctAnswer: 'He cant carry change in those pants.'
+		correctAnswer: 'He cant carry change in those pants.',
+		group:'money'
 	},
+
 
 	{		
 		question:"What is Newman's first name ?",
 		answer:['John', 'Jerry', 'Jason', 'Not Mentioned'],
-		correctAnswer: 'Not Mentioned'
+		correctAnswer: 'Not Mentioned',
+		group:'newman'
 	},
 ];
 
 //events
 //initialize 
 //button click 
-//Start Function 
+
+//begin with the start page 
+//HIDE DIV function
+$(function(){
+    $("#master").hide();
+    $("#start").on("click", function(){
+        $("#master, #start").toggle();
+    });
+});	
+
 
 $('#start').on('click', function() { 
 
+//Once the user clicks 'start', the game begins 
 	startGame();
 
+//timer starts counting down 
 	function startTimer(duration, display) {
     var timer = duration, minutes, seconds;	
     setInterval(function () {
@@ -63,17 +80,7 @@ jQuery(function ($) {
 
 
 
-//HIDE DIV function
-$(function(){
-    $("#master").hide();
-    $("#start").on("click", function(){
-        $("#master, #start").toggle();
-    });
-});
-
-
-
-/* FUNCTIONS */
+//once start is clicked, this funciton will cycle through each question and append it to the div on the html page 
 function startGame() {
 var j = 0;
 var questionString = '';
@@ -86,8 +93,8 @@ var questionString = '';
 
 		  for(var a=0; a < questions[i].answer.length; a++) {
 		    answerString += '<input class="answer" type="radio">' + questions[i].answer[a] + '</input>';
-		  }
 
+		  }
 		  $('#questions').append('<div class="question">' + questionString + answerString + '</div>');
 }
 }
@@ -98,27 +105,8 @@ var questionString = '';
 
 
 
-//timer
 
 
-
-
-
-
-//functions 
-
-
-
-
-
-
-//begin with the start page 
-
-
-
-
-
-//Once the user clicks 'start', the game begins 
 
 
 

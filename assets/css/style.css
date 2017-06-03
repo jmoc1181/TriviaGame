@@ -3,7 +3,7 @@
 }
 
 .container{ 
-	max-width: 980px;
+	max-width: 965px;
 
  }
 
@@ -11,9 +11,8 @@
     background-color: #d5e6ee ;
 	background-image: url(../images/background.jpg);
 	background-attachment: fixed;
-	background-position: center; 
+	background-position: center top; 
 	background-repeat: no-repeat;
-
   }
 
 
@@ -58,7 +57,7 @@
  }
 
  .timer { 
-	font-size: 30px;
+	font-size: 40px;
 	color: red;
 	text-align: center;
 	font-family: 'Arapey', serif;
