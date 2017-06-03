@@ -1,11 +1,15 @@
+* { 
+  box-sizing: border-box; 
+}
+
 .container{ 
 	max-width: 980px;
 
  }
 
  body { 
-    background-color:  #d5e6ee ;
-	
+    background-color: #d5e6ee ;
+	background-image: url(../images/background.jpg);
 	background-attachment: fixed;
 	background-position: center; 
 	background-repeat: no-repeat;
@@ -52,4 +56,11 @@
 	margin-bottom: 20px;
 	text-align: center;
  }
+
+ .timer { 
+	font-size: 30px;
+	color: red;
+	text-align: center;
+	font-family: 'Arapey', serif;
+  }
 
