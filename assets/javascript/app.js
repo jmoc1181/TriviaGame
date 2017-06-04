@@ -5,7 +5,7 @@ var questions = [
 		question:'What is the name of the alcoholic beverage that cannot be detected on the breath?',
 		answer:['Schnapps', 'Hennigans', 'Schneigals', 'Smirnoff'],
 		correctAnswer: 'Hennigans',
-		group:'sister'
+		
 	}, 
 
 
@@ -13,7 +13,7 @@ var questions = [
 		question:"What is the name of Elaine's sister?",
 		answer:['Debra', 'Madison', 'Helen', 'Gail'],
 		correctAnswer: 'Gail',
-		group:'sister'
+		
 	},
 
 
@@ -21,7 +21,7 @@ var questions = [
 		question:"In 'The Subway', what was Georges reason for not giving the blind man money?",
 		answer:['He had no change.', 'He cant carry change in those pants.', 'He gave his change to someone else', 'He ignores him.'],
 		correctAnswer: 'He cant carry change in those pants.',
-		group:'money'
+		
 	},
 
 
@@ -29,9 +29,10 @@ var questions = [
 		question:"What is Newman's first name ?",
 		answer:['John', 'Jerry', 'Jason', 'Not Mentioned'],
 		correctAnswer: 'Not Mentioned',
-		group:'newman'
+		
 	},
 ];
+
 
 //events
 //initialize 
@@ -47,8 +48,8 @@ $(function(){
 });	
 
 
-$('#start').on('click', function() { 
 
+$('#start').on('click', function() { 
 //Once the user clicks 'start', the game begins 
 	startGame();
 
@@ -74,9 +75,7 @@ jQuery(function ($) {
         display = $('#time');
     startTimer(twoMinute, display);
 });
-	
 })
-
 
 
 
@@ -91,8 +90,8 @@ var questionString = '';
 		  
 		  questionString = '<div>' + j + '. ' + questions[i].question + '</div>';
 
-		  for(var a=0; a < questions[i].answer.length; a++) {
-		    answerString += '<input class="answer" type="radio">' + questions[i].answer[a] + '</input>';
+		  for(var a=0; a < questions[i].answer.length; a++) {	
+		    answerString += '<input id="answers" class="answer" type="radio" value='+questions[i].answer[a]+' name="question'+i+'">' + questions[i].answer[a] + '</input>';
 
 		  }
 		  $('#questions').append('<div class="question">' + questionString + answerString + '</div>');
@@ -100,11 +99,22 @@ var questionString = '';
 }
 
 
+//checks if the answer is correct 
+$(document).on('click', '#answers', function(){ 
+	check(); 
+	
+});
 
 
 
+function check () { 
+//for(var i=0; i < questions.length; i++) 
+	//$('input[name="question0"]:checked'.val());
+	console.log($('input[name="question0"]:checked').val()); 
+	console.log('adasd');
+	console.log($('input[name="question0"]:checked'));
 
-
+}
 
 
 
