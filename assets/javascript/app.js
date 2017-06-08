@@ -5,7 +5,6 @@ var questions = [
 		question:'What is the name of the alcoholic beverage that cannot be detected on the breath?',
 		answer:['Schnapps', 'Hennigans', 'Schneigals', 'Smirnoff'],
 		correctAnswer: 'Hennigans',
-		
 	}, 
 
 
@@ -18,26 +17,27 @@ var questions = [
 
 
 	{		
-		question:"In 'The Subway', what was Georges reason for not giving the blind man money?",
-		answer:['He had no change.', 'He cant carry change in those pants.', 'He gave his change to someone else', 'He ignores him.'],
-		correctAnswer: 'He cant carry change in those pants.',
+		question:"When Kramer gets Bette Midler an Italian Ice, what flavor does she want?",
+		answer:['Pineapple', 'Tutti-frutti', 'Strawberry', 'Banana'],
+		correctAnswer: 'Pineapple',
 		
 	},
 
 
 	{		
 		question:"What is Newman's first name ?",
-		answer:['John', 'Jerry', 'Jason', 'Not Mentioned'],
-		correctAnswer: 'Not Mentioned',
+		answer:['John', 'Jerry', 'Jason', 'Not-Mentioned'],
+		correctAnswer: 'Not-Mentioned',
 		
 	},
 ];
 
+var correct = 0 
+var wrong = 0 
 
 //events
 //initialize 
 //button click 
-
 //begin with the start page 
 //HIDE DIV function
 $(function(){
@@ -64,8 +64,9 @@ $('#start').on('click', function() {
 
         display.text(minutes + ":" + seconds);
 
-        if (--timer < 0) {
-            timer = duration;
+        if (--timer === 0) {
+        	clearInterval(time);
+            check();
         }
     }, 1000);
 }
@@ -92,34 +93,68 @@ var questionString = '';
 
 		  for(var a=0; a < questions[i].answer.length; a++) {	
 		    answerString += '<input id="answers" class="answer" type="radio" value='+questions[i].answer[a]+' name="question'+i+'">' + questions[i].answer[a] + '</input>';
-
 		  }
-		  $('#questions').append('<div class="question">' + questionString + answerString + '</div>');
-}
-}
-
-
-//checks if the answer is correct 
-$(document).on('click', '#answers', function(){ 
-	check(); 
+		  $('#questions').append('<div class="question">' + questionString + answerString + '</div>');	
 	
-});
+}}
 
 
+//checks if the answer is correct on click
+//$(document).on('click', '#answers', function(){ 
+//	check(); 
+//});
 
 function check () { 
-//for(var i=0; i < questions.length; i++) 
-	//$('input[name="question0"]:checked'.val());
-	console.log($('input[name="question0"]:checked').val()); 
-	console.log('adasd');
-	console.log($('input[name="question0"]:checked'));
+//for(var i=0; i < questions.length; i++) 	
+	 //$('input[name="question0"]:checked'.val());
+	var q1 = ($('input[name="question0"]:checked').val()); 
+	var q2 = ($('input[name="question1"]:checked').val()); 
+	var q3 = ($('input[name="question2"]:checked').val()); 
+	var q4 = ($('input[name="question3"]:checked').val()); 
 
+	console.log(q1);
+	console.log(q2);
+	console.log(q3);
+	console.log(q4);
+
+if (q1 === questions[0].correctAnswer) { 
+	correct += 1; 
+}
+else {
+	wrong += 1; 
 }
 
+if (q2 === questions[1].correctAnswer) { 
+	correct += 1; 
+}
+else {
+	wrong += 1; 
+}
 
+if (q3 === questions[2].correctAnswer) { 
+	correct += 1; 
+}
+else {
+	wrong += 1; 
+}
 
+if (q4 === questions[3].correctAnswer) { 
+	correct += 1; 
+}
+else {
+	wrong += 1; 
+}
 
+console.log(correct);
+console.log(wrong);
+}
 
+console.log(questions[0].correctAnswer);
+console.log(questions[1].correctAnswer);
+console.log(questions[2].correctAnswer);
+console.log(questions[3].correctAnswer);
+
+console.log(correct);
 
 //game start and the there will be a clock counting down, the user has to finish the questions before the time runs out 
 
