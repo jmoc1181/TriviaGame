@@ -4,8 +4,7 @@
 
 .container{ 
 	max-width: 965px;
-
- }
+}
 
  body { 
     background-color: #d5e6ee ;
@@ -13,14 +12,14 @@
 	background-attachment: fixed;
 	background-position: center top; 
 	background-repeat: no-repeat;
-  }
+}
 
 
 .header { 
 	text-align: center;
 	font-family: 'Arapey', serif;
 	margin-bottom: 50px;
- }
+}
 
 
 .start-button { 
@@ -36,7 +35,7 @@
 	border-radius: 50%;
 	font-weight: bold;
 
-  }
+}
 
 .start { 
 	text-align: center;
@@ -66,3 +65,15 @@
 	font-family: 'Arapey', serif;
   }
 
+  .score { 
+	text-align: center;
+	font-size: 40px;
+	color: red;
+	font-family: 'Arapey', serif;
+	text-align: center;
+}
+
+ 
+ 
+
+  

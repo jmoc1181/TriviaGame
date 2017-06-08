@@ -32,19 +32,22 @@ var questions = [
 	},
 ];
 
-var correct = 0 
-var wrong = 0 
+var correct = 0;
+var wrong = 0;
+
 
 //events
 //initialize 
 //button click 
 //begin with the start page 
 //HIDE DIV function
+$( "#endGame" ).hide();
+
 $(function(){
-    $("#master").hide();
-    $("#start").on("click", function(){
-        $("#master, #start").toggle();
-    });
+	    $("#master").hide();
+	    $("#start").on("click", function(){
+	        $("#master, #start").toggle();
+	    });
 });	
 
 
@@ -54,27 +57,27 @@ $('#start').on('click', function() {
 	startGame();
 
 //timer starts counting down 
-	function startTimer(duration, display) {
-    var timer = duration, minutes, seconds;	
-    setInterval(function () {
-        minutes = parseInt(timer / 60, 10);
-        seconds = parseInt(timer % 60, 10);
+		function startTimer(duration, display) {
+	    var timer = duration, minutes, seconds;	
+	    setInterval(function () {
+	        minutes = parseInt(timer / 60, 10);
+	        seconds = parseInt(timer % 60, 10);
 
-        seconds = seconds < 10 ? "0" + seconds : seconds;
+	        seconds = seconds < 10 ? "0" + seconds : seconds;
 
-        display.text(minutes + ":" + seconds);
+	        display.text(minutes + ":" + seconds);
 
-        if (--timer === 0) {
-        	clearInterval(time);
-            check();
-        }
+	        if (--timer === 0) {
+	        	clearInterval(time);
+	            check();
+	        }
     }, 1000);
 }
 
 jQuery(function ($) {
-    var twoMinute = 60 * 2,
-        display = $('#time');
-    startTimer(twoMinute, display);
+	    var twoMinute = 60 * .1,
+	        display = $('#time');
+	    startTimer(twoMinute, display);
 });
 })
 
@@ -107,22 +110,24 @@ var questionString = '';
 function check () { 
 //for(var i=0; i < questions.length; i++) 	
 	 //$('input[name="question0"]:checked'.val());
-	var q1 = ($('input[name="question0"]:checked').val()); 
-	var q2 = ($('input[name="question1"]:checked').val()); 
-	var q3 = ($('input[name="question2"]:checked').val()); 
-	var q4 = ($('input[name="question3"]:checked').val()); 
+			var q1 = ($('input[name="question0"]:checked').val()); 
+			var q2 = ($('input[name="question1"]:checked').val()); 
+			var q3 = ($('input[name="question2"]:checked').val()); 
+			var q4 = ($('input[name="question3"]:checked').val()); 
 
-	console.log(q1);
-	console.log(q2);
-	console.log(q3);
-	console.log(q4);
+			console.log(q1);
+			console.log(q2);
+			console.log(q3);
+			console.log(q4);
 
-if (q1 === questions[0].correctAnswer) { 
+if (q1 === questions[0].correctAnswer) 
+										{ 
 	correct += 1; 
 }
 else {
 	wrong += 1; 
 }
+
 
 if (q2 === questions[1].correctAnswer) { 
 	correct += 1; 
@@ -131,12 +136,14 @@ else {
 	wrong += 1; 
 }
 
+
 if (q3 === questions[2].correctAnswer) { 
 	correct += 1; 
 }
 else {
 	wrong += 1; 
 }
+
 
 if (q4 === questions[3].correctAnswer) { 
 	correct += 1; 
@@ -145,16 +152,22 @@ else {
 	wrong += 1; 
 }
 
-console.log(correct);
-console.log(wrong);
+			console.log(correct);
+			console.log(wrong);
+
+			document.getElementById("correct").innerHTML=correct;
+			document.getElementById("wrong").innerHTML=wrong;	
+
+$( "#master" ).hide();
+$( "#endGame" ).show();
 }
 
-console.log(questions[0].correctAnswer);
-console.log(questions[1].correctAnswer);
-console.log(questions[2].correctAnswer);
-console.log(questions[3].correctAnswer);
+			console.log(questions[0].correctAnswer);
+			console.log(questions[1].correctAnswer);
+			console.log(questions[2].correctAnswer);
+			console.log(questions[3].correctAnswer);
 
-console.log(correct);
+			console.log(correct);
 
 //game start and the there will be a clock counting down, the user has to finish the questions before the time runs out 
 
