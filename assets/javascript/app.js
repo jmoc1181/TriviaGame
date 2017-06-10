@@ -54,7 +54,7 @@ var questions = [
 	},
 
 	{		
-		question:"Which is not a possible child's name mentioned in 'The Seven'",
+		question:"Which is not a possible child's name mentioned in 'The Seven'?",
 		answer:[' Mug ', ' Ritz ', ' Sauce ', ' Bisquick '],
 		correctAnswer: 'Ritz',
 		
@@ -68,7 +68,7 @@ var questions = [
 	},
 	
 	{		
-		question:"Which other show is not mentioned/seen on Seinfeld",
+		question:"Which other show is not mentioned/seen on Seinfeld?",
 		answer:[' Cheers ', ' Blossom ', ' Jeopardy ', ' Wheel-of-Fortune '],
 		correctAnswer: 'Wheel-of-Fortune',
 		
@@ -118,7 +118,7 @@ $('#start').on('click', function() {
 }
 
 		jQuery(function ($) {
-	    var twoMinute = 60 * 2,
+	    var twoMinute = 60 * 1.5,
 	        display = $('#time');
 	    startTimer(twoMinute, display);
 });
@@ -143,6 +143,7 @@ var questionString = '';
 		  $('#questions').append('<div class="question">' + questionString + answerString + '</div>');	
 	
 }}
+
 
 
 //checks if the answer is correct on click
@@ -263,7 +264,20 @@ else {
 
 $( "#master" ).hide();
 $( "#endGame" ).show();
+
+
+if (correct >= 7) { 
+	 document.getElementById("gif").src="https://media.giphy.com/media/aMh59aKR8vjdC/giphy.gif"
 }
+	else { 
+	document.getElementById("gif").src="https://media.giphy.com/media/PEtL0mS2JXMBi/giphy.gif"
+	}
+
+
+}
+
+
+
 
 			console.log(questions[0].correctAnswer);
 			console.log(questions[1].correctAnswer);
