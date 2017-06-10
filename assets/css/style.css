@@ -73,7 +73,15 @@
 	text-align: center;
 }
 
+#questions{ 
+	font-size: 20px;
+}
  
- 
+@media screen and (max-width: 700px){
+#questions { 
+	height: auto;
+	font-size: 15px;
+ }
+
 
   
