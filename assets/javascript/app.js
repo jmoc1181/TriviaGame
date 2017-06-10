@@ -80,25 +80,25 @@ var questions = [
 var correct = 0;
 var wrong = 0;
 var timing; 
-//events
-//initialize 
-//button click 
+
+
 //begin with the start page 
 //HIDE DIV function
 $( "#endGame" ).hide();
 
+//starts the function with unhiding the master div and starts the clock 
 $(function(){
 	    $("#master").hide();
 	    $("#start").on("click", function(){
 	        $("#master, #start").toggle();
-	    });
+	});
 });	
 
 
 
 $('#start').on('click', function() { 
 //Once the user clicks 'start', the game begins 
-	startGame();
+			startGame();
 
 //timer starts counting down 
 			function startTimer(duration, display) {
@@ -114,7 +114,7 @@ $('#start').on('click', function() {
 	        if (--timer === 0) {
 	            check();
 	        }
-   		 }, 1000);
+   		    }, 1000);
 }
 
 		jQuery(function ($) {
@@ -138,7 +138,7 @@ var questionString = '';
 		  questionString = '<div>' + j + '. ' + questions[i].question + '</div>';
 
 		  for(var a=0; a < questions[i].answer.length; a++) {	
-		    answerString += '<input id="answers" class="answer" type="radio" class="checkradios" value='+questions[i].answer[a]+' name="question'+i+'">' + questions[i].answer[a] + '</input>';
+		    answerString += '<input id="answers" class="answer" type="radio"  value='+questions[i].answer[a]+' name="question'+i+'">' + questions[i].answer[a] + '</input>';
 		  }
 		  $('#questions').append('<div class="question">' + questionString + answerString + '</div>');	
 	
@@ -146,17 +146,14 @@ var questionString = '';
 
 
 
-//checks if the answer is correct on click
-//$(document).on('click', '#answers', function(){ 
-//	check(); 
-//});
+//checks if the answer is correct on click and when timer goes down 
 
 function check () { 
-	
-    clearInterval(timing);
+
+//this stops the timer once the user clicks submit, otherwise it will add the results twice 	
+    		clearInterval(timing);
 
 //for(var i=0; i < questions.length; i++) 	
-	 //$('input[name="question0"]:checked'.val());
 			var q1 = ($('input[name="question0"]:checked').val()); 
 			var q2 = ($('input[name="question1"]:checked').val()); 
 			var q3 = ($('input[name="question2"]:checked').val()); 
@@ -256,68 +253,41 @@ else {
 }
 
 
-			console.log(correct);
-			console.log(wrong);
+		console.log(correct);
+		console.log(wrong);
 
 			document.getElementById("correct").innerHTML=correct;
 			document.getElementById("wrong").innerHTML=wrong;	
 
+
+//hides the master div with the questions and shows the end game div with the results 
 $( "#master" ).hide();
 $( "#endGame" ).show();
 
 
-if (correct >= 7) { 
-	 document.getElementById("gif").src="https://media.giphy.com/media/aMh59aKR8vjdC/giphy.gif"
-}
-	else { 
-	document.getElementById("gif").src="https://media.giphy.com/media/PEtL0mS2JXMBi/giphy.gif"
-	}
-
-
+		if (correct >= 7) { 
+				document.getElementById("gif").src="https://media.giphy.com/media/aMh59aKR8vjdC/giphy.gif"
+		}
+			else { 
+				document.getElementById("gif").src="https://media.giphy.com/media/PEtL0mS2JXMBi/giphy.gif"
+			}
 }
 
 
-
-
-			console.log(questions[0].correctAnswer);
-			console.log(questions[1].correctAnswer);
-			console.log(questions[2].correctAnswer);
-			console.log(questions[3].correctAnswer);
-			console.log(questions[4].correctAnswer);
-			console.log(questions[5].correctAnswer);
-			console.log(questions[6].correctAnswer);
-			console.log(questions[7].correctAnswer);
-			console.log(questions[8].correctAnswer);
-			console.log(questions[9].correctAnswer);
-			console.log(correct);
-
+		console.log(questions[0].correctAnswer);
+		console.log(questions[1].correctAnswer);
+		console.log(questions[2].correctAnswer);
+		console.log(questions[3].correctAnswer);
+		console.log(questions[4].correctAnswer);
+		console.log(questions[5].correctAnswer);
+		console.log(questions[6].correctAnswer);
+		console.log(questions[7].correctAnswer);
+		console.log(questions[8].correctAnswer);
+		console.log(questions[9].correctAnswer);
+		console.log(correct);
 
 
 
-
-//game start and the there will be a clock counting down, the user has to finish the questions before the time runs out 
-
-
-
-
-//each question will have four radio buttons the user must choose. they can only choose one one button 
-
-
-
-
-//if the counter runs out before you finish the questions, show the correct ,incorrect, and unanswered questions 
-
-
-
-
-
-//if the user finishes all the questioins and clicks 'done', it will show the correct ,incorrect, and unanswered questions 
-
-
-
-
-
-//maybe a restart quesitons 
 
 
 
